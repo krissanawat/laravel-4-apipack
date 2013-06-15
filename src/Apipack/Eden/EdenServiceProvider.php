@@ -21,13 +21,13 @@ class EdenServiceProvider extends ServiceProvider {
 		$this->app['eden'] = $this->app->share(function($app)
         {
              
-            return 'eden';
+            return new Eden_Facebook;
         });
 	}
 
    public function boot()
     {
-      $package = array('apipack/eden');
+      $this->package('vendor/package');
     }
 	/**
 	 * Get the services provided by the provider.

@@ -10,6 +10,6 @@ class Eden extends Facade {
      * @return string
      */
     protected static function getFacadeAccessor() {
-            return new Eden; }
+            return 'eden'; }
 
 }

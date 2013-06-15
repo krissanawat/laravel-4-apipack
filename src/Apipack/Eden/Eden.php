@@ -33,7 +33,7 @@ if (!class_exists('Eden')) {
             }
         }
        public function hello(){
-         echo "hello eden"
+         echo "hello eden";
        }
 
         public function __invoke() {
@@ -430,7 +430,7 @@ if (!class_exists('Eden_Error')) {
 /* Eden_Event */
 if (!class_exists('Eden_Event')) {
 
-    class Eden_Event extends Eden_Class {
+    class Eden_Event extends \Eden {
 
         protected $_observers = array();
 
@@ -620,7 +620,7 @@ if (!class_exists('Eden_Route_Error')) {
 /* Eden_Route_Class */
 if (!class_exists('Eden_Route_Class')) {
 
-    class Eden_Route_Class extends Eden_Class {
+    class Eden_Route_Class extends \Eden {
 
         protected static $_instance = NULL;
         protected $_route = array();
@@ -688,7 +688,7 @@ if (!class_exists('Eden_Route_Class')) {
 /* Eden_Route_Method */
 if (!class_exists('Eden_Route_Method')) {
 
-    class Eden_Route_Method extends Eden_Class {
+    class Eden_Route_Method extends \Eden {
 
         protected static $_instance = NULL;
         protected $_route = array();
@@ -783,7 +783,7 @@ if (!class_exists('Eden_Route_Method')) {
 /* Eden_Route_Function */
 if (!class_exists('Eden_Route_Function')) {
 
-    class Eden_Route_Function extends Eden_Class {
+    class Eden_Route_Function extends \Eden {
 
         protected static $_instance = NULL;
         protected $_route = array();
@@ -842,7 +842,7 @@ if (!class_exists('Eden_Route_Function')) {
 /* Eden_Route */
 if (!class_exists('Eden_Route')) {
 
-    class Eden_Route extends Eden_Class {
+    class Eden_Route extends \Eden {
 
         protected static $_instance = NULL;
 
@@ -880,7 +880,7 @@ if (!class_exists('Eden_Route')) {
 /* Eden_When */
 if (!class_exists('Eden_When')) {
 
-    class Eden_When extends Eden_Class implements \ArrayAccess, \Iterator {
+    class Eden_When extends \Eden implements \ArrayAccess, \Iterator {
 
         protected $_scope = NULL;
         protected $_increment = 1;
@@ -944,7 +944,7 @@ if (!class_exists('Eden_When')) {
 /* Eden_Debug */
 if (!class_exists('Eden_Debug')) {
 
-    class Eden_Debug extends Eden_Class {
+    class Eden_Debug extends \Eden {
 
         protected $_scope = NULL;
         protected $_name = NULL;
@@ -999,7 +999,7 @@ if (!class_exists('Eden_Debug')) {
 /* Eden_Loop */
 if (!class_exists('Eden_Loop')) {
 
-    class Eden_Loop extends Eden_Class {
+    class Eden_Loop extends \Eden {
 
         protected $_scope = NULL;
         protected $_callback = NULL;
@@ -1039,7 +1039,7 @@ if (!class_exists('Eden_Loop')) {
 /* Eden_Loader */
 if (!class_exists('Eden_Loader')) {
 
-    class Eden_Loader extends Eden_Class {
+    class Eden_Loader extends \Eden {
 
         protected $_root = array();
 
@@ -1090,7 +1090,7 @@ if (!class_exists('Eden_Loader')) {
 /* Eden_Type */
 if (!class_exists('Eden_Type')) {
 
-    class Eden_Type extends Eden_Class {
+    class Eden_Type extends \Eden {
 
         public static function i($type = NULL) {
             if (func_num_args() > 1) {
@@ -1119,7 +1119,7 @@ if (!class_exists('Eden_Type')) {
 /* Eden_Type_Abstract */
 if (!class_exists('Eden_Type_Abstract')) {
 
-    abstract class Eden_Type_Abstract extends Eden_Class {
+    abstract class Eden_Type_Abstract extends \Eden {
 
         const PRE = 'pre';
         const POST = 'post';
@@ -1444,7 +1444,7 @@ if (!class_exists('Eden_Type_String')) {
 /* Eden_Collection */
 if (!class_exists('Eden_Collection')) {
 
-    class Eden_Collection extends Eden_Class implements \ArrayAccess, \Iterator, \Serializable, \Countable {
+    class Eden_Collection extends \Eden implements \ArrayAccess, \Iterator, \Serializable, \Countable {
 
         const FIRST = 'first';
         const LAST = 'last';
@@ -1624,7 +1624,7 @@ if (!class_exists('Eden_Collection')) {
 /* Eden_Curl */
 if (!class_exists('Eden_Curl')) {
 
-    class Eden_Curl extends Eden_Class implements \ArrayAccess {
+    class Eden_Curl extends \Eden implements \ArrayAccess {
 
         const PUT = 'PUT';
         const DELETE = 'DELETE';
@@ -2220,7 +2220,7 @@ if (!class_exists('Eden_Folder')) {
 /* Eden_Block */
 if (!class_exists('Eden_Block')) {
 
-    abstract class Eden_Block extends Eden_Class {
+    abstract class Eden_Block extends \Eden {
 
         protected static $_blockRoot = NULL;
         private static $_global = array();
@@ -2406,7 +2406,7 @@ if (!class_exists('Eden')) {
 /* Eden_Template */
 if (!class_exists('Eden_Template')) {
 
-    class Eden_Template extends Eden_Class {
+    class Eden_Template extends \Eden {
 
         protected $_data = array();
 
@@ -2457,7 +2457,7 @@ if (!class_exists('Eden_Template')) {
 /* Eden_Session */
 if (!class_exists('Eden_Session')) {
 
-    class Eden_Session extends Eden_Class implements \ArrayAccess, \Iterator {
+    class Eden_Session extends \Eden implements \ArrayAccess, \Iterator {
 
         protected static $_session = false;
 
@@ -2607,7 +2607,7 @@ if (!class_exists('Eden_Session')) {
 /* Eden_Cookie */
 if (!class_exists('Eden_Cookie')) {
 
-    class Eden_Cookie extends Eden_Class implements \ArrayAccess, \Iterator {
+    class Eden_Cookie extends \Eden implements \ArrayAccess, \Iterator {
 
         public static function i() {
             return self::_getSingleton(__CLASS__);
@@ -2819,7 +2819,7 @@ if (!class_exists('Eden_Registry')) {
 /* Eden_Image */
 if (!class_exists('Eden_Image')) {
 
-    class Eden_Image extends Eden_Class {
+    class Eden_Image extends \Eden {
 
         protected $_resource = NULL;
         protected $_width = 0;
@@ -3391,7 +3391,7 @@ if (!class_exists('Eden_Timezone_Error')) {
 /* Eden_Timezone_Validation */
 if (!class_exists('Eden_Timezone_Validation')) {
 
-    class Eden_Timezone_Validation extends Eden_Class {
+    class Eden_Timezone_Validation extends \Eden {
 
         public static function i() {
             return self::_getSingleton(__CLASS__);
@@ -3415,7 +3415,7 @@ if (!class_exists('Eden_Timezone_Validation')) {
 /* Eden_Timezone */
 if (!class_exists('Eden_Timezone')) {
 
-    class Eden_Timezone extends Eden_Class {
+    class Eden_Timezone extends \Eden {
 
         const GMT = 'GMT';
         const UTC = 'UTC';
@@ -3569,7 +3569,7 @@ if (!class_exists('Eden_Country_Error')) {
 /* Eden_Country_Au */
 if (!class_exists('Eden_Country_Au')) {
 
-    class Eden_Country_Australia extends Eden_Class {
+    class Eden_Country_Australia extends \Eden {
 
         protected static $_territories = array('Australian Capital Territory', 'New South Wales', 'Northern Territory', 'Queensland', 'South Australia', 'Tasmania', 'Victoria', 'Western Australia');
 
@@ -3587,7 +3587,7 @@ if (!class_exists('Eden_Country_Au')) {
 /* Eden_Country_Ca */
 if (!class_exists('Eden_Country_Ca')) {
 
-    class Eden_Country_Ca extends Eden_Class {
+    class Eden_Country_Ca extends \Eden {
 
         protected static $_territories = array('BC' => 'British Columbia', 'ON' => 'Ontario', 'NL' => 'Newfoundland and Labrador', 'NS' => 'Nova Scotia', 'PE' => 'Prince Edward Island', 'NB' => 'New Brunswick', 'QC' => 'Quebec', 'MB' => 'Manitoba', 'SK' => 'Saskatchewan', 'AB' => 'Alberta', 'NT' => 'Northwest Territories', 'NU' => 'Nunavut', 'YT' => 'Yukon Territory');
 
@@ -3605,7 +3605,7 @@ if (!class_exists('Eden_Country_Ca')) {
 /* Eden_Country_Uk */
 if (!class_exists('Eden_Country_Uk')) {
 
-    class Eden_Country_Uk extends Eden_Class {
+    class Eden_Country_Uk extends \Eden {
 
         public static function i() {
             return self::_getSingleton(__CLASS__);
@@ -3623,7 +3623,7 @@ if (!class_exists('Eden_Country_Uk')) {
 /* Eden_Country_Us */
 if (!class_exists('Eden_Country_Us')) {
 
-    class Eden_Country_Us extends Eden_Class {
+    class Eden_Country_Us extends \Eden {
 
         public static function i() {
             return self::_getSingleton(__CLASS__);
@@ -3658,7 +3658,7 @@ if (!class_exists('Eden_Country_Us')) {
 /* Eden_Country */
 if (!class_exists('Eden_Country')) {
 
-    class Eden_Country extends Eden_Class {
+    class Eden_Country extends \Eden {
 
         public static function i() {
             return self::_getSingleton(__CLASS__);
@@ -3692,7 +3692,7 @@ if (!class_exists('Eden_Country')) {
 /* Eden_Language */
 if (!class_exists('Eden_Language')) {
 
-    class Eden_Language extends Eden_Class implements \ArrayAccess, \Iterator {
+    class Eden_Language extends \Eden implements \ArrayAccess, \Iterator {
 
         protected $_language = array();
         protected $_file = NULL;
@@ -3800,7 +3800,7 @@ if (!class_exists('Eden_Oauth_Error')) {
 /* Eden_Oauth_Base */
 if (!class_exists('Eden_Oauth_Base')) {
 
-    class Eden_Oauth_Base extends Eden_Class {
+    class Eden_Oauth_Base extends \Eden {
 
         const HMAC_SHA1 = 'HMAC-SHA1';
         const RSA_SHA1 = 'RSA-SHA1';
@@ -4088,7 +4088,7 @@ if (!class_exists('Eden_Oauth_Consumer')) {
 /* Eden_Oauth */
 if (!class_exists('Eden_Oauth')) {
 
-    class Eden_Oauth extends Eden_Class {
+    class Eden_Oauth extends \Eden {
 
         public static function i() {
             return self::_getSingleton(__CLASS__);
@@ -4188,7 +4188,7 @@ if (!class_exists('Eden_Oauth')) {
 /* Eden_Oauth2_Abstract */
 if (!class_exists('Eden_Oauth2_Abstract')) {
 
-    abstract class Eden_Oauth2_Abstract extends Eden_Class {
+    abstract class Eden_Oauth2_Abstract extends \Eden {
 
         const CODE = 'code';
         const TOKEN = 'token';
@@ -4389,7 +4389,7 @@ if (!class_exists('Eden_Oauth2_Desktop')) {
 /* Eden_Oauth2 */
 if (!class_exists('Eden_Oauth2')) {
 
-    class Eden_Oauth2 extends Eden_Class {
+    class Eden_Oauth2 extends \Eden {
 
         public static function i() {
             return self::_getSingleton(__CLASS__);
@@ -4411,7 +4411,7 @@ if (!class_exists('Eden_Oauth2')) {
 /* Eden_Cache */
 if (!class_exists('Eden_Cache')) {
 
-    class Eden_Cache extends Eden_Class {
+    class Eden_Cache extends \Eden {
 
         protected $_key = NULL;
         protected $_path = NULL;
@@ -4501,7 +4501,7 @@ if (!class_exists('Eden_Cache')) {
 /* Eden_Apc */
 if (!class_exists('Eden_Apc')) {
 
-    class Eden_Apc extends Eden_Class {
+    class Eden_Apc extends \Eden {
 
         public static function i() {
             return self::_getSingleton(__CLASS__);
@@ -4552,7 +4552,7 @@ if (!class_exists('Eden_Apc')) {
 /* Eden_Memcache */
 if (!class_exists('Eden_Memcache')) {
 
-    class Eden_Memcache extends Eden_Class {
+    class Eden_Memcache extends \Eden {
 
         protected $_memcache = NULL;
 
@@ -4624,7 +4624,7 @@ if (!class_exists('Eden_Memcache')) {
 /* Eden_Mail */
 if (!class_exists('Eden_Mail')) {
 
-    class Eden_Mail extends Eden_Class {
+    class Eden_Mail extends \Eden {
 
         public static function i() {
             return self::_getSingleton(__CLASS__);
@@ -4670,7 +4670,7 @@ if (!class_exists('Eden_Mail_Error')) {
 /* Eden_Mail_Imap */
 if (!class_exists('Eden_Mail_Imap')) {
 
-    class Eden_Mail_Imap extends Eden_Class {
+    class Eden_Mail_Imap extends \Eden {
 
         const TIMEOUT = 30;
         const NO_SUBJECT = '(no subject)';
@@ -5218,7 +5218,7 @@ if (!class_exists('Eden_Mail_Imap')) {
 /* Eden_Mail_Pop3 */
 if (!class_exists('Eden_Mail_Pop3')) {
 
-    class Eden_Mail_Pop3 extends Eden_Class {
+    class Eden_Mail_Pop3 extends \Eden {
 
         const TIMEOUT = 30;
 
@@ -5384,7 +5384,7 @@ if (!class_exists('Eden_Mail_Pop3')) {
 /* Eden_Mail_Smtp */
 if (!class_exists('Eden_Mail_Smtp')) {
 
-    class Eden_Mail_Smtp extends Eden_Class {
+    class Eden_Mail_Smtp extends \Eden {
 
         const TIMEOUT = 30;
 
@@ -6170,7 +6170,7 @@ if (!class_exists('Eden_Sql_Database')) {
 /* Eden_Sql_Query */
 if (!class_exists('Eden_Sql_Query')) {
 
-    abstract class Eden_Sql_Query extends Eden_Class {
+    abstract class Eden_Sql_Query extends \Eden {
 
         public function __toString() {
             return $this->getQuery();
@@ -6641,7 +6641,7 @@ if (!class_exists('Eden_Sql_Model')) {
 /* Eden_Sql_Search */
 if (!class_exists('Eden_Sql_Search')) {
 
-    class Eden_Sql_Search extends Eden_Class {
+    class Eden_Sql_Search extends \Eden {
 
         const LEFT = 'LEFT';
         const RIGHT = 'RIGHT';
@@ -7249,7 +7249,7 @@ if (!class_exists('Eden_Mysql_Create')) {
 /* Eden_Mysql_Subselect */
 if (!class_exists('Eden_Mysql_Subselect')) {
 
-    class Eden_Mysql_Subselect extends Eden_Class {
+    class Eden_Mysql_Subselect extends \Eden {
 
         protected $_parentQuery;
 
@@ -8424,7 +8424,7 @@ if (!class_exists('Eden_Amazon_Error')) {
 /* Eden_Amazon_Base */
 if (!class_exists('Eden_Amazon_Base')) {
 
-    class Eden_Amazon_Base extends Eden_Class {
+    class Eden_Amazon_Base extends \Eden {
 
         protected $_publicKey = NULL;
         protected $_privateKey = NULL;
@@ -8484,7 +8484,7 @@ if (!class_exists('Eden_Amazon_Base')) {
 /* Eden_Amazon_Ec2 */
 if (!class_exists('Eden_Amazon_Ec2')) {
 
-    class Eden_Amazon_Ec2 extends Eden_Class {
+    class Eden_Amazon_Ec2 extends \Eden {
 
         protected $_accessKey = NULL;
         protected $_accessSecret = NULL;
@@ -8609,7 +8609,7 @@ if (!class_exists('Eden_Amazon_Ec2')) {
 /* Eden_Amazon_Ec2_Base */
 if (!class_exists('Eden_Amazon_Ec2_Base')) {
 
-    class Eden_Amazon_Ec2_Base extends Eden_Class {
+    class Eden_Amazon_Ec2_Base extends \Eden {
 
         const AMAZON_EC2_URL = 'https://ec2.amazonaws.com/';
         const AMAZON_EC2_HOST = 'ec2.amazonaws.com';
@@ -10650,7 +10650,7 @@ if (!class_exists('Eden_Amazon_Ec2_Windows')) {
 /* Eden_Amazon_Ecs */
 if (!class_exists('Eden_Amazon_Ecs')) {
 
-    class Eden_Amazon_Ecs extends Eden_Class {
+    class Eden_Amazon_Ecs extends \Eden {
 
         protected $_publicKey = NULL;
         protected $_privateKey = NULL;
@@ -10786,7 +10786,7 @@ if (!class_exists('Eden_Amazon_Ecs')) {
 /* Eden_Amazon_S3 */
 if (!class_exists('Eden_Amazon_S3')) {
 
-    class Eden_Amazon_S3 extends Eden_Class {
+    class Eden_Amazon_S3 extends \Eden {
 
         const ACL_PRIVATE = 'private';
         const ACL_PUBLIC_READ = 'public-read';
@@ -11459,7 +11459,7 @@ if (!class_exists('Eden_Amazon_Ses')) {
 /* Eden_Amazon_Sns */
 if (!class_exists('Eden_Amazon_Sns')) {
 
-    class Eden_Amazon_Sns extends Eden_Class {
+    class Eden_Amazon_Sns extends \Eden {
 
         const AMAZON_SNS_URL = 'http://sns.us-east-1.amazonaws.com/';
         const AMAZON_SNS_HOST = 'sns.us-east-1.amazonaws.com';
@@ -11708,7 +11708,7 @@ if (!class_exists('Eden_Amazon_Sns')) {
 /* Eden_Amazon */
 if (!class_exists('Eden_Amazon')) {
 
-    class Eden_Amazon extends Eden_Class {
+    class Eden_Amazon extends \Eden {
 
         public static function i() {
             return self::_getSingleton(__CLASS__);
@@ -11745,8 +11745,10 @@ if (!class_exists('Eden_Amazon')) {
 /* Eden_Google */
 if (!class_exists('Eden_Google')) {
 
-    class Eden_Google extends Eden_Class {
-
+    class Eden_Google extends \Eden {
+        public function hello(){
+            echo "eee";
+        }
         public static function i() {
             return self::_getSingleton(__CLASS__);
         }
@@ -11827,7 +11829,7 @@ if (!class_exists('Eden_Google_Error')) {
 /* Eden_Google_Base */
 if (!class_exists('Eden_Google_Base')) {
 
-    class Eden_Google_Base extends Eden_Class {
+    class Eden_Google_Base extends \Eden {
 
         const ACCESS_TOKEN = 'access_token';
         const KEY = 'key';
@@ -15186,7 +15188,7 @@ if (!class_exists('Eden_Google_Youtube_Upload')) {
 /* Eden_Facebook */
 if (!class_exists('Eden_Facebook')) {
 
-    class Eden_Facebook extends Eden_Class {
+    class Eden_Facebook extends \Eden {
 
         const RSS = 'https://www.facebook.com/feeds/page.php?id=%s&format=rss20';
         const RSS_AGENT = 'Mozilla/5.0 (X11;U;Linux x86_64;en-US;rv:1.9.2.13) Gecko/20101206 Ubuntu/10.10 (maverick) Firefox/3.6.13';
@@ -15259,9 +15261,9 @@ if (!class_exists('Eden_Facebook_Auth')) {
         protected $_secret = NULL;
         protected $_redirect = NULL;
 
-        public static function i() {
-            return self::_getMultiple(__CLASS__);
-        }
+        // public static function i() {
+        //     return self::_getMultiple(__CLASS__);
+        // }
 
         public function __construct($key, $secret, $redirect) {
             Eden_Facebook_Error::i()->argument(1, 'string')->argument(2, 'string')->argument(3, 'string');
@@ -15274,7 +15276,7 @@ if (!class_exists('Eden_Facebook_Auth')) {
 /* Eden_Facebook_Graph */
 if (!class_exists('Eden_Facebook_Graph')) {
 
-    class Eden_Facebook_Graph extends Eden_Class {
+    class Eden_Facebook_Graph extends \Eden {
 
         const GRAPH_URL = 'https://graph.facebook.com/';
         const LOGOUT_URL = 'https://www.facebook.com/logout.php?next=%s&access_token=%s';
@@ -15499,7 +15501,7 @@ if (!class_exists('Eden_Facebook_Graph')) {
 /* Eden_Facebook_Post */
 if (!class_exists('Eden_Facebook_Post')) {
 
-    class Eden_Facebook_Post extends Eden_Class {
+    class Eden_Facebook_Post extends \Eden {
 
         protected $_id = 'me';
         protected $_post = array();
@@ -15570,7 +15572,7 @@ if (!class_exists('Eden_Facebook_Post')) {
 /* Eden_Facebook_Select */
 if (!class_exists('Eden_Facebook_Select')) {
 
-    class Eden_Facebook_Select extends Eden_Class {
+    class Eden_Facebook_Select extends \Eden {
 
         protected $_select = NULL;
         protected $_from = NULL;
@@ -15640,7 +15642,7 @@ if (!class_exists('Eden_Facebook_Select')) {
 /* Eden_Facebook_Search */
 if (!class_exists('Eden_Facebook_Search')) {
 
-    class Eden_Facebook_Search extends Eden_Class {
+    class Eden_Facebook_Search extends \Eden {
 
         const ASC = 'ASC';
         const DESC = 'DESC';
@@ -15818,7 +15820,7 @@ if (!class_exists('Eden_Facebook_Search')) {
 /* Eden_Facebook_Subscribe */
 if (!class_exists('Eden_Facebook_Subscribe')) {
 
-    class Eden_Facebook_Subscribe extends Eden_Class {
+    class Eden_Facebook_Subscribe extends \Eden {
 
         const SUBSCRIBE_URL = 'https://graph.facebook.com/%s/subscriptions';
         const APPLICATION_URL = 'https://graph.facebook.com/oauth/access_token?client_id=%s&client_secret=%s&grant_type=%s';
@@ -15888,7 +15890,7 @@ if (!class_exists('Eden_Facebook_Subscribe')) {
 /* Eden_Facebook_Fql */
 if (!class_exists('Eden_Facebook_Fql')) {
 
-    class Eden_Facebook_Fql extends Eden_Class {
+    class Eden_Facebook_Fql extends \Eden {
 
         const SELECT = 'Eden_Facebook_Select';
         const FQL_URL = 'https://graph.facebook.com/fql';
@@ -16031,7 +16033,7 @@ if (!class_exists('Eden_Facebook_Fql')) {
 /* Eden_Twitter */
 if (!class_exists('Eden_Twitter')) {
 
-    class Eden_Twitter extends Eden_Class {
+    class Eden_Twitter extends \Eden {
 
         public static function i() {
             return self::_getSingleton(__CLASS__);
@@ -16281,7 +16283,7 @@ if (!class_exists('Eden_Twitter_Base')) {
 /* Eden_Twitter_Oauth */
 if (!class_exists('Eden_Twitter_Oauth')) {
 
-    class Eden_Twitter_Oauth extends Eden_Class {
+    class Eden_Twitter_Oauth extends \Eden {
 
         const REQUEST_URL = 'https://api.twitter.com/oauth/request_token';
         const AUTHORIZE_URL = 'https://api.twitter.com/oauth/authorize';
@@ -17859,7 +17861,7 @@ if (!class_exists('Eden_Paypal_Error')) {
 /* Eden_Paypal_Base */
 if (!class_exists('Eden_Paypal_Base')) {
 
-    class Eden_Paypal_Base extends Eden_Class {
+    class Eden_Paypal_Base extends \Eden {
 
         const VERSION = '84.0';
         const TEST_URL = 'https://api-3t.sandbox.paypal.com/nvp';
@@ -18889,7 +18891,7 @@ if (!class_exists('Eden_Paypal_Transaction')) {
 /* Eden_Paypal */
 if (!class_exists('Eden_Paypal')) {
 
-    class Eden_Paypal extends Eden_Class {
+    class Eden_Paypal extends \Eden {
 
         const PEM = '/paypal/cacert.pem';
 
@@ -18964,7 +18966,7 @@ if (!class_exists('Eden_Xend_Error')) {
 /* Eden_Xend_Base */
 if (!class_exists('Eden_Xend_Base')) {
 
-    class Eden_Xend_Base extends Eden_Class {
+    class Eden_Xend_Base extends \Eden {
 
         const SHIPMENT_WSDL = 'https://www.xend.com.ph/api/ShipmentService.asmx?wsdl';
         const TRACKING_WSDL = 'https://www.xend.com.ph/api/TrackingService.asmx?wsdl';
@@ -19583,7 +19585,7 @@ if (!class_exists('Eden_Xend_Tracking')) {
 /* Eden_Xend */
 if (!class_exists('Eden_Xend')) {
 
-    class Eden_Xend extends Eden_Class {
+    class Eden_Xend extends \Eden {
 
         public static function i() {
             return self::_getSingleton(__CLASS__);
