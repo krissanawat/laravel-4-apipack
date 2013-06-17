@@ -2,7 +2,7 @@
 
 namespace Apipack\Eden;
 
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\ServiceProvider as ServiceProvider;
 
 class EdenServiceProvider extends ServiceProvider {
 
@@ -24,11 +24,16 @@ class EdenServiceProvider extends ServiceProvider {
 
                     return new Eden;
                 });
-                $this->app['google'] = $this->app->share(function($app) {
+        $this->app['google'] = $this->app->share(function($app) {
 
-                    return new Eden_Google($app);
+                    return new Eden_Google($app['config']);
+                });
+         $this->app['facebook'] = $this->app->share(function($app) {
+
+                    return new Eden_Facebook($app['config']);
                 });
     }
+    
 
 //    public function google() {
 //        $this->app['google'] = $this->app->share(function($app) {
@@ -58,9 +63,11 @@ class EdenServiceProvider extends ServiceProvider {
 //                });
 //    }
 
-
-    public function boot() {
+//
+    public function boot() 
+    {
         $this->package('vendor/package');
+       
     }
 
     /**

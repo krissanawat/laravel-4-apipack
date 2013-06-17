@@ -6,7 +6,7 @@
  * Copyright and license information can be found at LICENSE.txt
  * distributed with this package.
  */
-
+use ReflectionClass;
 require_once dirname(__FILE__).'/error.php';
 require_once dirname(__FILE__).'/route.php';
 

@@ -72,13 +72,19 @@ require_once dirname(__FILE__).'/google/youtube.php';
  * @category   google
  * @author     Christian Symon M. Buenavista sbuenavista@openovate.com
  */
+use Illuminate\Config\Repository;
 class Eden_Google extends Eden_Class {
 	/* Constants 
 	-------------------------------*/
 	/* Public Properties
 	-------------------------------*/
-	/* Protected Properties
-	-------------------------------*/
+	/* Protected Properties */
+               
+	 protected $config;
+         protected $clientId;
+        protected $clientSecret;
+        protected $redirect;
+        protected $apiKey;
 	/* Private Properties
 	-------------------------------*/
 	/* Get
@@ -99,15 +105,48 @@ class Eden_Google extends Eden_Class {
 	 * @param *string 
 	 * @return Eden_Google_Oauth
 	 */
-	public function auth($clientId, $clientSecret, $redirect, $apiKey = NULL ) {
+        public function __construct(Repository $config)
+        {
+            $this->config = $config;
+            $this->getConfig();
+          
+        } 
+        
+        public function getConfig($key = null)
+	{
+          
+            $configs = $this->config->get('package::Oauth.Google');
+//            dd($configs);
+		if ($configs['clientID'] != "" && isset($configs['clientID'])) 
+		{
+                    $this->clientId = $configs['clientID'];
+                    
+                }
+                if($configs['clientSeceret'] != "" && isset($configs['clientSeceret']))
+                {      
+                    $this->clientSecret = $configs['clientSeceret'];
+                }
+                if($configs['redirectUrl'] != "" && isset($configs['redirectUrl']))
+                { 
+                    $this->redirect = $configs['redirectUrl'];
+                }
+                if($configs['ApiKey'] != "" && isset($configs['ApiKey']))
+                { 
+                    $this->_apiKey = $configs['ApiKey'];
+                }
+        }   
+	public function auth() {
 		//argument test
 		Eden_Google_Error::i()
 			->argument(1, 'string')				//Argument 1 must be a string
 			->argument(2, 'string')				//Argument 2 must be a string
 			->argument(3, 'url')				//Argument 3 must be a url
 			->argument(4, 'string', 'null');	//Argument 4 must be a string
-		
-		return Eden_Google_Oauth::i($clientId, $clientSecret, $redirect, $apiKey);
+		  $clientID = $this->clientId;
+            $clientSecret = $this->clientSecret;
+            $redirectUrl = $this->redirect;
+            $apiKey = $this->apiKey;
+	return Eden_Google_Oauth::i($clientID,$clientSecret,$redirectUrl,$apiKey);
 	}
 	
 	/**
