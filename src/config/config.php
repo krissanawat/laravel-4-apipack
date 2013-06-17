@@ -4,7 +4,7 @@ return array(
     /*
      * App credential get it form Google Console
      *  */
-    'Oauth' => array(
+    
         'Google' => array(
             'clientID' => '',
             'clientSeceret' => '',
@@ -19,6 +19,6 @@ return array(
         'Twitter'=>array(
             
         )
-    )
+    
 );
 ?>
