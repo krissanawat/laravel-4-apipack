@@ -74,7 +74,7 @@ class Eden_Facebook extends Eden_Class {
         public function getConfig($key = null)
 	{
           
-            $configs = $this->config->get('package::Oauth.Facebook');
+            $configs = $this->config->get('package::Facebook');
 //            dd($configs);
 		if ($configs['appkey'] != "" && isset($configs['appkey'])) 
 		{
