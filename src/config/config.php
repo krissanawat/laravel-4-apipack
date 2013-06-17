@@ -1,10 +1,7 @@
 <?php
 
 return array(
-    /*
-     * App credential get it form Google Console
-     *  */
-    'Oauth' => array(
+   
         'Google' => array(
             'clientID' => '474246563221.apps.googleusercontent.com',
             'clientSeceret' => 'xN8YUZQqExbJPXebjiaR3tMO',
@@ -19,6 +16,6 @@ return array(
         'Twitter'=>array(
             
         )
-    )
+    
 );
 ?>
