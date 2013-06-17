@@ -1,9 +1,7 @@
 <?php
 
 return array(
-    /*
-     * App credential get it form Google Console
-     *  */
+    
     
         'Google' => array(
             'clientID' => '',
