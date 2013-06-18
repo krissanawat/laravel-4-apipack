@@ -18,7 +18,8 @@ return array(
         ),
         'Instagram'=>array(
           'clientid'=>'',
-          'clientsecret'=>''
+          'clientsecret'=>'',
+		  'redirecturl'=>
         )
     
 );
