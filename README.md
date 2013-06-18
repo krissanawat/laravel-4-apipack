@@ -1,17 +1,17 @@
 ## Laravel 4 Apipack
 
 Apipack is integrate api part in [Eden framework](https://www.eden-php.com) to laravel.
-
+for more information  [Eden Doc](http://www.eden-php.com/documentation/)
 ~~~
 php artisan config:publish apipack/eden
 ~~~
 
 ### Installation
 
-*   Apipack[&nbsp;on Packagist](https://packagist.org/packages/teepluss/theme)
-*   [Apipack&nbsp;on GitHub](https://github.com/teepluss/laravel4-theme)
+*   Apipack[&nbsp;on Packagist](https://packagist.org/packages/apipack/eden)
+*   [Apipack&nbsp;on GitHub](https://github.com/taqmaninw/laravel-4-apipack)
 
-To get the lastest version of Theme simply require it in your `composer.json` file.
+To get the lastest version of Apipack simply require it in your `composer.json` file.
 
 ~~~
 "apipack/eden": "dev-master"
@@ -32,12 +32,12 @@ Apipack also ships with a facade which provides the static syntax for creating c
 ~~~
 'aliases' => array(
 
-    'Google' => 'Apipack\Theme\Facades\Google',
- 'Facebook' => 'Apipack\Theme\Facades\Facebook',
- 'Instagram' => 'Apipack\Theme\Facades\Instagram',
+    'Google' => 'Apipack\Apipack\Facades\Google',
+ 'Facebook' => 'Apipack\Apipack\Facades\Facebook',
+ 'Instagram' => 'Apipack\Apipack\Facades\Instagram',
 )
 ~~~
-### Main configuration for theme package you can add app credential in this
+### Main configuration for Apipack package you can add app credential in this
 
 ~~~php
 
@@ -67,7 +67,28 @@ return array(
 
 );
 ~~~
-###  
+###
+
+## Simple Usage
+   ~~~php
+$auth = Google::auth();
+ 
+//if no code and no session
+if(!isset($_GET['code']) && !isset($_SESSION['token'])) {
+    //redirect to login
+    $login = $auth->getLoginUrl('calendar');
+    header('Location: '.$login);
+    exit;
+}
+ 
+//Code is returned back from google
+if(isset($_GET['code'])) {
+    //save it to session
+    $access = $auth->getAccess($_GET['code']);
+    $_SESSION['token'] = $access['access_token'];
+     
+}
+   ~~~
 ## todo
    - Amazon
    - Twitter
