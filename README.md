@@ -1,6 +1,6 @@
 ## Laravel 4 Apipack
 
-Apipack is integrate api part in Eden framework to laravel.
+Apipack is integrate api part in [Eden framework](https://www.eden-php.com) to laravel.
 
 ~~~
 php artisan config:publish apipack/eden
@@ -22,7 +22,7 @@ You'll then need to run `composer install` to download it and have the autoloade
 Once Apipack is installed you need to register the service provider with the application. Open up `app/config/app.php` and find the `providers` key.
 
 ~~~
-'providers' =&gt; array(
+'providers' => array(
 
     'Apipack\Eden\EdenServiceProvider'
 
@@ -32,9 +32,9 @@ Apipack also ships with a facade which provides the static syntax for creating c
 ~~~
 'aliases' => array(
 
-    'Google' => 'Teepluss\Theme\Facades\Google',
- 'Facebook' => 'Teepluss\Theme\Facades\Facebook',
- 'Instagram' => 'Teepluss\Theme\Facades\Instagram',
+    'Google' => 'Apipack\Theme\Facades\Google',
+ 'Facebook' => 'Apipack\Theme\Facades\Facebook',
+ 'Instagram' => 'Apipack\Theme\Facades\Instagram',
 )
 ~~~
 ### Main configuration for theme package you can add app credential in this
