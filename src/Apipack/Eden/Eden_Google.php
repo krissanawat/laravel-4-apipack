@@ -115,7 +115,7 @@ class Eden_Google extends Eden_Class {
         public function getConfig($key = null)
 	{
           
-            $configs = $this->config->get('package::Google');
+            $configs = $this->config->get('eden::Google');
            // dd($configs);
 		if ($configs['clientID'] != "" && isset($configs['clientID'])) 
 		{

@@ -1,6 +1,6 @@
-<?php
+<?php namespace Apipack\Eden;
 
-namespace Apipack\Eden;
+
 
 use Illuminate\Support\ServiceProvider as ServiceProvider;
 
@@ -31,6 +31,10 @@ class EdenServiceProvider extends ServiceProvider {
          $this->app['facebook'] = $this->app->share(function($app) {
 
                     return new Eden_Facebook($app['config']);
+                });
+         $this->app['instagram'] = $this->app->share(function($app) {
+
+                    return new Eden_Instagram($app['config']);
                 });
     }
     
@@ -66,7 +70,7 @@ class EdenServiceProvider extends ServiceProvider {
 //
     public function boot() 
     {
-        $this->package('vendor/package');
+        $this->package('apipack/eden');
        
     }
 

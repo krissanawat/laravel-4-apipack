@@ -2,13 +2,13 @@
 
 return array(
     /*
-     * App credential get it form Google Console
+     * App credential 
      *  */
     
         'Google' => array(
-            'clientID' => '474246563221.apps.googleusercontent.com',
-            'clientSeceret' => 'xN8YUZQqExbJPXebjiaR3tMO',
-            'redirectUrl' => 'https://mycms.com/oauth2callback',
+            'clientID' => '',
+            'clientSeceret' => '',
+            'redirectUrl' => '',
             'ApiKey' => ''
         ),
         'Facebook'=> array(
@@ -16,8 +16,9 @@ return array(
           'appsecret'=>'',
           'redirecturl'=>''
         ),
-        'Twitter'=>array(
-            
+        'Instagram'=>array(
+          'clientid'=>'',
+          'clientsecret'=>''
         )
     
 );

@@ -29,6 +29,7 @@ require_once dirname(__FILE__).'/facebook/fql.php';
  * @category   facebook
  * @author     Christian Blanquera cblanquera@openovate.com
  */
+use Illuminate\Config\Repository;
 class Eden_Facebook extends Eden_Class {
 	/* Constants
 	-------------------------------*/
@@ -49,7 +50,12 @@ class Eden_Facebook extends Eden_Class {
 	public static function i() {
 		return self::_getSingleton(__CLASS__);
 	}
-	
+	    public function __construct(Repository $config)
+        {
+            $this->config = $config;
+            $this->getConfig();
+          
+        } 
 	/* Public Methods
 	-------------------------------*/
 	/**
@@ -60,22 +66,24 @@ class Eden_Facebook extends Eden_Class {
 	 * @param string
 	 * @return Eden_Facebook_Auth
 	 */
-	public function auth($key, $secret, $redirect) {
+
+	public function auth() {
 		Eden_Facebook_Error::i()
 			->argument(1, 'string')
 			->argument(2, 'string')
 			->argument(3, 'string');
-		$key = $this->appkey;
+				$key = $this->appkey;
                 $secret = $this->appsecret;
                 $redirect = $this->redirecturl;
+                // dd($key);
 		return Eden_Facebook_Auth::i($key, $secret, $redirect);
 	}
 	
         public function getConfig($key = null)
 	{
           
-            $configs = $this->config->get('package::Facebook');
-//            dd($configs);
+            $configs = $this->config->get('eden::Facebook');
+           // dd($configs);
 		if ($configs['appkey'] != "" && isset($configs['appkey'])) 
 		{
                     $this->appkey = $configs['appkey'];
