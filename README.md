@@ -32,9 +32,9 @@ Apipack also ships with a facade which provides the static syntax for creating c
 ~~~
 'aliases' => array(
 
-    'Google' => 'Apipack\Apipack\Facades\Google',
- 'Facebook' => 'Apipack\Apipack\Facades\Facebook',
- 'Instagram' => 'Apipack\Apipack\Facades\Instagram',
+    'Google' => 'Apipack\Eden\Facade\Google',
+ 'Facebook' => 'Apipack\Eden\Facade\Facebook',
+ 'Instagram' => 'Apipack\Eden\Facade\Instagram',
 )
 ~~~
 ### Main configuration for Apipack package you can add app credential in this
