@@ -179,7 +179,7 @@ class Eden_Google_Base extends Eden_Class {
 			return false;
 		}
 		libxml_use_internal_errors( true );
-		$doc = new DOMDocument('1.0', 'utf-8');
+		$doc = new \DOMDocument('1.0', 'utf-8');
 		$doc->loadXML($xml);
 		$errors = libxml_get_errors();
 		//front()->output($errors); exit;
@@ -252,7 +252,7 @@ class Eden_Google_Base extends Eden_Class {
 		//argument 1 must be a string or object
 		Eden_Google_Error::i()->argument(1, 'string', 'object');
 		
-		$xml = new DOMDocument(); 
+		$xml = new \DOMDocument(); 
 		$xml->preserveWhiteSpace = false; 
 		$xml->formatOutput = true; 
 		$xml->loadXML($query); 
