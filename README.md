@@ -1,6 +1,6 @@
 ## Laravel 4 Apipack
 
-Apipack integrates the api from [Eden Framework](http://www.eden-php.com) to [Laravel](http://laravel.com).
+Apipack integrates the api from [Eden Framework](http://www.eden-php.com) into to [Laravel](http://laravel.com).
 For more information, see the [Eden Documentation](http://www.eden-php.com/documentation).
 ~~~
 php artisan config:publish apipack/eden
@@ -11,7 +11,7 @@ php artisan config:publish apipack/eden
 * Apipack on [Packagist](https://packagist.org/packages/apipack/eden)
 * Apipack on [GitHub](https://github.com/taqmaninw/laravel-4-apipack)
 
-To get the latest version of Apipack simply require it in your `composer.json` file.
+To get the latest version of Apipack, simply require it in your `composer.json` file.
 
 ~~~
 "apipack/eden": "dev-master"
@@ -32,9 +32,10 @@ Apipack also ships with a facade which provides the static syntax for creating c
 ~~~php
 'aliases' => array(
 
-    'Google' => 'Apipack\Eden\Facade\Google',
- 'Facebook' => 'Apipack\Eden\Facade\Facebook',
- 'Instagram' => 'Apipack\Eden\Facade\Instagram',
+    'Google'    => 'Apipack\Eden\Facade\Google',
+    'Facebook'  => 'Apipack\Eden\Facade\Facebook',
+    'Instagram' => 'Apipack\Eden\Facade\Instagram',
+
 )
 ~~~
 
@@ -48,25 +49,23 @@ return array(
      *
      */
     
-        'Google' => array(
-            'clientID' => '',
-            'clientSeceret' => '',
-            'redirectUrl' => '',
-            'ApiKey' => ''
-        ),
-        'Facebook'=> array(
-          'appkey'=>'',
-          'appsecret'=>'',
-          'redirecturl'=>''
-        ),
-        'Instagram'=>array(
-          'clientid'=>'',
-          'clientsecret'=>'',
-          'redirecturl'=>''
-        )
+    'Google' => array(
+        'clientID' => '',
+        'clientSeceret' => '',
+        'redirectUrl' => '',
+        'ApiKey' => '',
+    ),
+    'Facebook'=> array(
+        'appkey' => '',
+        'appsecret' => '',
+        'redirecturl' => '',
+    ),
+    'Instagram'=>array(
+        'clientid' => '',
+        'clientsecret' => '',
+        'redirecturl' => '',
+    ),
     
-);
-
 );
 ~~~
 
@@ -88,7 +87,6 @@ if(isset($_GET['code'])) {
     //save it to session
     $access = $auth->getAccess($_GET['code']);
     $_SESSION['token'] = $access['access_token'];
-     
 }
 ~~~
 
