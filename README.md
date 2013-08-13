@@ -1,35 +1,35 @@
 ## Laravel 4 Apipack
 
-Apipack is integrate api part in [Eden framework](https://www.eden-php.com) to laravel.
-for more information  [Eden Doc](http://www.eden-php.com/documentation/)
+Apipack integrates the api from [Eden Framework](http://www.eden-php.com) to [Laravel](http://laravel.com).
+For more information, see the [Eden Documentation](http://www.eden-php.com/documentation).
 ~~~
 php artisan config:publish apipack/eden
 ~~~
 
-### Installation
+## Installation
 
-*   Apipack[&nbsp;on Packagist](https://packagist.org/packages/apipack/eden)
-*   [Apipack&nbsp;on GitHub](https://github.com/taqmaninw/laravel-4-apipack)
+* Apipack on [Packagist](https://packagist.org/packages/apipack/eden)
+* Apipack on [GitHub](https://github.com/taqmaninw/laravel-4-apipack)
 
-To get the lastest version of Apipack simply require it in your `composer.json` file.
+To get the latest version of Apipack simply require it in your `composer.json` file.
 
 ~~~
 "apipack/eden": "dev-master"
 ~~~
 
-You'll then need to run `composer install` to download it and have the autoloader updated.
+You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
 
-Once Apipack is installed you need to register the service provider with the application. Open up `app/config/app.php` and find the `providers` key.
-
-~~~
+Once Apipack is installed, you need to register the service provider with the application. Open up `app/config/app.php` and find the `providers` key.
+~~~php
 'providers' => array(
 
     'Apipack\Eden\EdenServiceProvider'
 
 );
 ~~~
+
 Apipack also ships with a facade which provides the static syntax for creating collections. You can register the facade in the `aliases` key of your `app/config/app.php` file.
-~~~
+~~~php
 'aliases' => array(
 
     'Google' => 'Apipack\Eden\Facade\Google',
@@ -37,14 +37,16 @@ Apipack also ships with a facade which provides the static syntax for creating c
  'Instagram' => 'Apipack\Eden\Facade\Instagram',
 )
 ~~~
-### Main configuration for Apipack package you can add app credential in this
 
+## Configuration
+
+In the main configuration for Apipack, you can add app credential in this:
 ~~~php
-
 return array(
     /*
      * App credential 
-     *  */
+     *
+     */
     
         'Google' => array(
             'clientID' => '',
@@ -67,10 +69,10 @@ return array(
 
 );
 ~~~
-###
 
 ## Simple Usage
-   ~~~php
+
+~~~php
 $auth = Google::auth();
  
 //if no code and no session
@@ -88,8 +90,9 @@ if(isset($_GET['code'])) {
     $_SESSION['token'] = $access['access_token'];
      
 }
-   ~~~
-## todo
+~~~
+
+## Todo
    - Amazon
    - Twitter
    - Payapl
