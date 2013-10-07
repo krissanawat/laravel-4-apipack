@@ -82,7 +82,7 @@ class Eden_Facebook extends Eden_Class {
         public function getConfig($key = null)
 	{
           
-            $configs = $this->config->get('eden::Facebook');
+           $configs = \Config::get('eden::Facebook');
            // dd($configs);
 		if ($configs['appkey'] != "" && isset($configs['appkey'])) 
 		{
