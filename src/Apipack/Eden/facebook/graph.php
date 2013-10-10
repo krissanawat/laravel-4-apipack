@@ -373,8 +373,19 @@ class Eden_Facebook_Graph extends Eden_Class {
 		
 		//for the URL	
 		$url = self::GRAPH_URL.$id.'/picture';
-		
-		//if this needs a token
+		if(!empty($options['type'])){
+		$url = self::GRAPH_URL.$id.'/picture?type='.$type;
+		}
+		if(!empty($options['width'])){
+		$url = self::GRAPH_URL.$id.'/picture?width='.$options['width'];
+		}
+		if(!empty($options['height'])){
+		$url = self::GRAPH_URL.$id.'/picture?height='.$options['height'];
+		}
+		if(!empty($options['width']) && !empty($options['height'])){
+		$url = self::GRAPH_URL.$id.'/picture?width='.$options['height'].
+		'&height='.$options['height'];
+		}
 		if($token) {
 			//add it
 			$url .= '?access_token='.$this->_token;
