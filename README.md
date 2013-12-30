@@ -100,3 +100,7 @@ if(isset($_GET['code'])) {
 ## Support or Contact
 
 If you have some problem, Contact taqmaninw@gmail.com
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/taqmaninw/laravel-4-apipack/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
