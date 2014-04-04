@@ -100,4 +100,4 @@ if(isset($_GET['code'])) {
 ## Support or Contact
 
 If you have some problem, Contact taqmaninw@gmail.com
-my site : (laraveltut)[www.laraveltut.com]
+my site :[www.laraveltut.com]
